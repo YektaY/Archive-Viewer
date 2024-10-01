@@ -1,6 +1,7 @@
 # Config & Save files
 *.txt
 *.xml
+*.stp
 *.trc
 
 # Byte-compiled / optimized / DLL files
@@ -138,3 +139,4 @@ dmypy.json
 
 # Debugger
 debug_archive_viewer.bash
+debug_trace.bash
