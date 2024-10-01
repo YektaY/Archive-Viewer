@@ -1,0 +1,33 @@
+{% block footer %}
+<div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; padding: 1em 0;">
+  <!-- Left side: Custom content (e.g., logo and text) -->
+  <div style="display: flex; align-items: center;">
+    <img src="{{ base_url }}/images/SLAC_primary_red.png" alt="Logo" style="height: 40px; margin-right: 10px;">
+  </div>
+
+  <!-- Right side: Navigation links -->
+  <div>
+    {% if previous_page or next_page %}
+      <nav class="md-footer-nav">
+        {% if previous_page %}
+          <a href="{{ previous_page.url | url }}" title="{{ previous_page.title }}" class="md-footer-nav__link md-footer-nav__link--prev">
+            <div class="md-footer-nav__button md-icon">
+              {{ icons.chevron_left }}
+              <span class="md-footer-nav__title">{{ previous_page.title }}</span>
+            </div>
+          </a>
+        {% endif %}
+        {% if next_page %}
+          <a href="{{ next_page.url | url }}" title="{{ next_page.title }}" class="md-footer-nav__link md-footer-nav__link--next">
+            <div class="md-footer-nav__button md-icon">
+              <span class="md-footer-nav__title">{{ next_page.title }}</span>
+              {{ icons.chevron_right }}
+            </div>
+          </a>
+        {% endif %}
+      </nav>
+    {% endif %}
+  </div>
+</div>
+{% endblock %}
+
